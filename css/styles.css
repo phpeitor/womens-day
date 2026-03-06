@@ -18,7 +18,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(60, 0, 70, 0.52);
   z-index: -1;
 }
 
@@ -318,4 +318,48 @@ body {
     font-size: 1.5rem;
     font-weight: lighter;
   }
+}
+
+/* ===== Women's Day Enhanced Animations ===== */
+
+@keyframes glow-wday {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(189, 110, 207, 0.5), 0 0 16px rgba(189, 110, 207, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 105, 180, 1), 0 0 40px rgba(189, 110, 207, 0.8), 0 0 60px rgba(189, 110, 207, 0.4);
+  }
+}
+
+@keyframes pulse-btn {
+  0%, 100% {
+    transform: scale(1);
+    color: #e3bae8;
+  }
+  50% {
+    transform: scale(1.08);
+    color: #ff69b4;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+  }
+}
+
+@keyframes title-shimmer {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(227, 186, 232, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(227, 186, 232, 0.9), 0 0 35px rgba(189, 110, 207, 0.5);
+  }
+}
+
+.wish-hbd {
+  animation: glow-wday 2.8s ease-in-out infinite;
+}
+
+#replay {
+  animation: pulse-btn 2s ease-in-out infinite;
+}
+
+h1.one {
+  animation: title-shimmer 3s ease-in-out infinite;
 }
