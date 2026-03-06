@@ -1,3 +1,31 @@
+// Partículas de corazones flotantes para la escena final
+const launchHearts = () => {
+  const chars = ['\u{1F49C}', '\u{1F338}', '\u{2728}', '\u{1F4AB}', '\u{1F33A}', '\u{1F495}'];
+  for (let i = 0; i < 22; i++) {
+    setTimeout(() => {
+      const el = document.createElement('span');
+      el.className = 'heart-particle';
+      el.textContent = chars[Math.floor(Math.random() * chars.length)];
+      el.style.left = Math.random() * 95 + 'vw';
+      el.style.fontSize = (Math.random() * 1.5 + 0.8) + 'rem';
+      document.body.appendChild(el);
+      TweenMax.fromTo(
+        el,
+        2.5 + Math.random() * 3,
+        { y: 0, x: 0, opacity: 0, rotation: 0 },
+        {
+          y: -(window.innerHeight * 0.5 + Math.random() * window.innerHeight * 0.6),
+          x: (Math.random() - 0.5) * 160,
+          opacity: 1,
+          rotation: (Math.random() - 0.5) * 60,
+          ease: Power1.easeOut,
+          onComplete: function () { el.remove(); }
+        }
+      );
+    }, i * 180);
+  }
+};
+
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
@@ -79,6 +107,7 @@ const animationTimeline = () => {
       scale: 0.2,
       opacity: 0,
     })
+    .to(".typing-cursor", 0, { visibility: "visible" })
     .staggerTo(
       ".hbd-chatbox span",
       0.5,
@@ -87,8 +116,9 @@ const animationTimeline = () => {
       },
       0.05
     )
+    .to(".typing-cursor", 0, { visibility: "hidden" })
     .to(".fake-btn", 0.1, {
-      backgroundColor: "rgb(127, 206, 248)",
+      backgroundColor: "rgb(216, 145, 232)",
     })
     .to(
       ".four",
@@ -108,7 +138,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
+      backgroundColor: "rgb(156, 39, 176)",
       color: "#fff",
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
@@ -230,11 +260,13 @@ const animationTimeline = () => {
     )
     .from(
       ".wish h5",
-      0.5,
+      0.6,
       {
         opacity: 0,
         y: 10,
         skewX: "-15deg",
+        scale: 0.8,
+        ease: Back.easeOut.config(2),
       },
       "party"
     )
@@ -255,6 +287,7 @@ const animationTimeline = () => {
       y: 30,
       zIndex: "-1",
     })
+    .add(launchHearts)
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
       ".last-smile",
