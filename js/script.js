@@ -63,6 +63,7 @@ const animationTimeline = () => {
   tl.to(".container", 0.1, {
     visibility: "visible",
   })
+    .to(".six", 0, { opacity: 0, y: 0 })
     .from(".one", 0.7, {
       opacity: 0,
       y: 10,
