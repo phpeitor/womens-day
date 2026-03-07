@@ -41,6 +41,7 @@ body {
 .container div.six {
   top: 10vh;
   z-index: 1;
+  opacity: 0;
 }
 
 .container div.seven,

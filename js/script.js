@@ -222,6 +222,7 @@ const animationTimeline = () => {
       },
       0.2
     )
+    .to(".six", 0, { opacity: 1 })
     .from(
       ".girl-dp",
       0.5,
