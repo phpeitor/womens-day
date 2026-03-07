@@ -64,6 +64,7 @@ const animationTimeline = () => {
     visibility: "visible",
   })
     .to(".six", 0, { opacity: 0, y: 0 })
+    .to("#replay", 0, { pointerEvents: "none" })
     .from(".one", 0.7, {
       opacity: 0,
       y: 10,
@@ -302,6 +303,7 @@ const animationTimeline = () => {
     })
     .add(launchHearts)
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .to("#replay", 0, { pointerEvents: "auto" })
     .to(
       ".last-smile",
       0.5,
@@ -314,6 +316,12 @@ const animationTimeline = () => {
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
+  });
+
+  // Evitar que wish-hbd tenga cualquier comportamiento de enlace
+  document.querySelector(".wish-hbd").addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
   });
 };
 

@@ -240,6 +240,8 @@ body {
 .wish-hbd {
   font-size: 3em;
   margin: 0;
+  cursor: default;
+  user-select: none;
   /* text-transform: uppercase; */
 }
 
@@ -254,11 +256,14 @@ body {
   font-weight: lighter;
 }
 
+.nine {
+  pointer-events: none;
+}
+
 #replay {
   z-index: 3;
   cursor: pointer;
   position: relative;
-  pointer-events: auto;
 }
 
 /* Media Queries */
