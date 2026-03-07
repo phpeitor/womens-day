@@ -36,6 +36,10 @@ const animationTimeline = () => {
     .split("")
     .join("</span><span>")}</span`;
 
+  // Mover el cursor dentro del párrafo (tras el split) para que fluya inline con el texto
+  const cursor = document.querySelector(".typing-cursor");
+  if (cursor) textBoxChars.appendChild(cursor);
+
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
     .join("</span><span>")}</span`;
@@ -130,6 +134,12 @@ const animationTimeline = () => {
       },
       "+=0.7"
     )
+    .fromTo(
+      ".portrait-five",
+      0.8,
+      { opacity: 0, x: 50 },
+      { opacity: 1, x: 0, ease: Power2.easeOut }
+    )
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-2", 0.7, ideaTextTrans)
@@ -175,6 +185,7 @@ const animationTimeline = () => {
       },
       "+=2"
     )
+    .to(".portrait-five", 0.5, { opacity: 0 }, "-=0.5")
     .staggerFrom(
       ".idea-6 span",
       0.8,

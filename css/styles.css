@@ -76,13 +76,17 @@ body {
 
 .three {
   font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
 }
 
 .four .text-box {
   width: 600px;
   margin: 0 auto;
-  border: 3px solid #aaa;
-  border-radius: 5px;
+  border: 2px solid rgba(189, 110, 207, 0.5);
+  border-radius: 12px;
   padding: 10px;
   position: relative;
 }
@@ -319,6 +323,83 @@ body {
     font-weight: lighter;
   }
 }
+
+/* Panel de texto centrado con fondo semitransparente */
+.three p,
+.idea-1, .idea-2, .idea-3, .idea-4, .idea-5,
+.nine > p {
+  background: rgba(40, 0, 55, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px 22px;
+  display: inline-block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Panel detrás del chatbox */
+.four .text-box {
+  background: rgba(40, 0, 55, 0.50);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Panel detrás del bloque de felicitación */
+.six .wish {
+  background: rgba(40, 0, 55, 0.50);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 16px 24px;
+}
+
+/* ===== Portrait Photo Design ===== */
+
+.portrait-frame {
+  height: 130px;
+  width: auto;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+  border: 2px solid rgba(189, 110, 207, 0.7);
+  box-shadow: 0 4px 18px rgba(189, 110, 207, 0.45), 0 0 0 1px rgba(255, 105, 180, 0.1);
+  flex-shrink: 0;
+}
+
+/* Portrait en .three: pequeño junto al texto */
+.three .portrait-frame {
+  height: 120px;
+  max-width: 120px;
+}
+
+/* Retrato lateral en .five: decorativo, esquina derecha, NO tapa los textos */
+.portrait-five {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 160px;
+  width: auto;
+  max-width: 28%;
+  opacity: 0;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+/* Textos de .five siempre por encima de la foto */
+.five p {
+  z-index: 1;
+}
+
+/* Retrato en .six: columna izquierda, tamaño controlado */
+.six .portrait-frame {
+  max-width: none;
+  height: 210px;
+  width: auto;
+}
+
 
 /* ===== Women's Day Enhanced Animations ===== */
 
