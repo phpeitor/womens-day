@@ -315,7 +315,15 @@ const animationTimeline = () => {
 
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
-    tl.restart();
+    TweenMax.to(".container", 1.2, {
+      opacity: 0,
+      scale: 0.97,
+      ease: Power2.easeInOut,
+      onComplete: () => {
+        TweenMax.set(".container", { opacity: 1, scale: 1 });
+        tl.restart();
+      },
+    });
   });
 
   // Evitar que wish-hbd tenga cualquier comportamiento de enlace
