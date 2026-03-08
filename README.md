@@ -1,4 +1,4 @@
-# ✨ Feliz Día Internacional de la Mujer ✨👸
+# ✨ International Women's Day ✨👸
 
 [![forthebadge](http://forthebadge.com/images/badges/uses-css.svg)](https://www.linkedin.com/in/drphp/)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
@@ -6,7 +6,7 @@
 [![Video](https://img.youtube.com/vi/C3ynQCeaq-4/0.jpg)](https://www.youtube.com/watch?v=C3ynQCeaq-4)  
 [▶ Ver demo en YouTube](https://www.youtube.com/watch?v=C3ynQCeaq-4)
 
-Tarjeta animada interactiva para celebrar el **8 de marzo — Día Internacional de la Mujer**.  
+Tarjeta animada interactiva para celebrar el **8 de marzo - Día Internacional de la Mujer**.  
 
 ---
 
@@ -39,29 +39,24 @@ womens-day/
 
 ## 🚀 Cómo ejecutar el proyecto
 
-### Opción 1 — Apache (recomendado)
+### Opción 1 — VS Code Live Server (recomendado)
 
-1. Clona o copia la carpeta dentro del directorio `htdocs` de Apache:
+1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/phpeitor/womens-day.git C:/Apache24/htdocs/womens-day
+git clone https://github.com/phpeitor/womens-day.git
+cd womens-day
 ```
 
-2. Inicia Apache y abre en el navegador:
+2. Instala la extensión **Live Server** en VS Code.
+3. Haz clic derecho sobre `index.html` → **Open with Live Server**.  
+   Se abrirá automáticamente en `http://127.0.0.1:5500`.
 
-```
-http://localhost/womens-day/
-```
+### Opción 2 — Abrir directamente en el navegador
 
-### Opción 2 — VS Code Live Server
+Simplemente abre el archivo `index.html` en tu navegador.
 
-1. Instala la extensión **Live Server** en VS Code.
-2. Abre la carpeta del proyecto.
-3. Haz clic derecho sobre `index.html` → **Open with Live Server**.
-
-### Opción 3 — Abrir directamente en el navegador
-
-> ⚠️ Algunos navegadores bloquean la reproducción automática del video (`autoplay`) cuando se abre un archivo local (`file://`). Se recomienda usar un servidor web local para la mejor experiencia.
+> ⚠️ Algunos navegadores bloquean la reproducción automática del video (`autoplay`) con archivos locales (`file://`). Si el video no reproduce, usa la Opción 1.
 
 ---
 
