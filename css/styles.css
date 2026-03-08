@@ -540,6 +540,8 @@ h1.one {
   transform: translate(14%, 35%);
 }
 
+.logo { cursor: pointer; }
+
 #orbit .love{
   position:absolute; top:0; left:0;
   offset-distance:0%;
@@ -563,4 +565,99 @@ h1.one {
 #centered-image:hover{
   box-shadow:0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,215,0,0.8), 0 0 70px rgba(255,215,0,0.6);
   filter:brightness(1.2) contrast(1.2);
+}
+
+/* ===================== Logo Lightbox ===================== */
+.logo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 0, 30, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
+}
+
+.logo-lightbox--open {
+  background: rgba(20, 0, 30, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.logo-lightbox__img {
+  max-width: min(420px, 82vw);
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 2px solid rgba(227, 186, 232, 0.55);
+  box-shadow:
+    0 0 50px rgba(180, 100, 210, 0.55),
+    0 12px 50px rgba(0, 0, 0, 0.75);
+  background: #fff;
+  padding: 14px;
+  transform: translate(var(--lbx, 0px), var(--lby, 0px)) scale(0.1);
+  opacity: 0;
+}
+
+.logo-lightbox--open .logo-lightbox__img {
+  animation: lb-open 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.logo-lightbox--closing .logo-lightbox__img {
+  animation: lb-close 0.45s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes lb-open {
+  from {
+    transform: translate(var(--lbx, 0px), var(--lby, 0px)) scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes lb-close {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--lbx, 0px), var(--lby, 0px)) scale(0.1);
+    opacity: 0;
+  }
+}
+
+.logo-lightbox__close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(227, 186, 232, 0.15);
+  border: 2px solid rgba(227, 186, 232, 0.55);
+  color: #e3bae8;
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s 0.25s, background 0.25s, transform 0.25s;
+  z-index: 9001;
+}
+
+.logo-lightbox--open .logo-lightbox__close {
+  opacity: 1;
+}
+
+.logo-lightbox__close:hover {
+  background: rgba(227, 186, 232, 0.35);
+  transform: scale(1.12) rotate(90deg);
 }
