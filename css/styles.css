@@ -496,3 +496,65 @@ body {
 h1.one {
   animation: title-shimmer 3s ease-in-out infinite;
 }
+
+.logo{
+  position: fixed;    
+  top: 40px;       
+  left: 60px;
+  transform: rotate(-20deg); 
+  z-index: 5;  
+  width: 120px;
+}
+
+.logo:before {
+  content: "";
+  display: block;
+  background: rgba(53, 51, 51, 0.4);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px dashed #fff;
+  border-radius: 5px;
+}
+
+.box {
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 5px;
+  box-shadow: 1px 13px 79px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: transform 0.4s;
+}
+.box img {
+  width: 100%;
+}
+.box:hover {
+  transform: translate(14%, 35%);
+}
+
+#orbit .love{
+  position:absolute; top:0; left:0;
+  offset-distance:0%;
+  offset-rotate:0deg;               
+  animation:travel var(--speed) linear infinite;
+  animation-delay: calc(var(--i) * -0.3s);
+}
+
+@keyframes travel{ to{ offset-distance:100%; } }
+
+#orbit .love_word{
+  color:#1a1919; font-size:1.4rem; font-family:'Great Vibes';
+  letter-spacing:2px; text-shadow:0 0 20px #e1e1e0;
+  transform:rotateZ(-30deg);
+}
+
+#orbit .love--highlight .love_word{
+  color:rgb(224, 22, 120); font-size:2.4rem; text-shadow:0 0 10px rgb(242, 155, 155);
+}
+
+#centered-image:hover{
+  box-shadow:0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,215,0,0.8), 0 0 70px rgba(255,215,0,0.6);
+  filter:brightness(1.2) contrast(1.2);
+}
